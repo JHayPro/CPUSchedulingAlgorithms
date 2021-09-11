@@ -1,0 +1,5 @@
+%.o: %c $(CPUScheduling.h)
+	$(gcc) -c -o $@ $< $(-I)
+	
+CPUScheduling : CPUScheduling.o
+	gcc -pthread -o CPUScheduling CPUScheduling.c
